@@ -103,9 +103,9 @@ document.addEventListener("DOMContentLoaded", () => {
               showMessage(result.message, "success");
               await fetchActivities();
             } catch (error) {
+              deleteButton.disabled = false;
               showMessage(error.message || "Failed to unregister participant. Please try again.", "error");
               console.error("Error unregistering participant:", error);
-            }
           });
 
           participant.appendChild(deleteButton);
