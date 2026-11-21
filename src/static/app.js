@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     messageDiv.className = type;
     messageDiv.classList.remove("hidden");
 
-    setTimeout(() => {
+    clearTimeout(showMessage.timeoutId);
+    showMessage.timeoutId = setTimeout(() => {
       messageDiv.classList.add("hidden");
     }, 5000);
   }
